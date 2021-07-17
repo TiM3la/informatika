@@ -1,0 +1,14 @@
+function F(n: integer): integer;
+ begin
+  if n = 1 then
+    F:=3
+  else
+    if n mod 2 = 0 then
+      F:=F(n-1)+n
+    else
+      if n mod 2 <> 0 then
+        F:=F(n-2)+F(n-1);      
+ end;
+begin
+  print(F(35))
+end.
