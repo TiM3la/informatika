@@ -1,0 +1,31 @@
+function f(n: integer) : integer;
+ begin
+  if n mod 2 = 0 then
+    F:=(strtoint(inttostr(n)[1])+
+       strtoint(inttostr(n)[2])+
+       strtoint(inttostr(n)[3])+
+       strtoint(inttostr(n)[4])) div 2
+  else
+    F:=(strtoint(inttostr(n)[1])*
+       strtoint(inttostr(n)[2])*
+       strtoint(inttostr(n)[3])*
+       strtoint(inttostr(n)[4])) div 3;
+ end;
+ var t: text;
+     i,c,k,l: integer;
+     mas: array [1..499883] of integer;
+begin
+ assign(t,'Путь файла');
+ reset(t);
+ k:=1;
+ for i:= 1 to 499883 do
+  read(t,mas[i]);
+ for i:= 1 to 499883-1 do
+   if F(mas[i]) mod 2 = F(mas[i+1]) mod 2 then
+     begin
+     k:=k+1;
+     l:=max(l,k)
+     end 
+   else k:=1;
+ print(l)
+end.
