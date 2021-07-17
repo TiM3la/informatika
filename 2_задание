@@ -1,0 +1,19 @@
+Function F(n: integer): integer; forward;
+ Function G(n: integer): integer;
+  begin
+    G:=F(n)+1;
+  end; 
+ Function F(n: integer): integer;
+  begin
+   if n = 1 then
+     F:=2
+   else
+     if n mod 2 = 0 then
+       F:=G(n-1)+n
+     else
+       if n mod 2 <> 0 then
+         F:=G(n-2) + n*n
+  end;
+begin
+ writeln(F(5),G(5))
+end. 
