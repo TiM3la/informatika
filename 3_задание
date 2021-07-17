@@ -1,0 +1,16 @@
+Function F(n: integer): integer;
+ begin
+   if n = 1 then
+     F:=2
+   else if n mod 3 = 0 then
+     F:=F(n-1)+n
+   else if n mod 3 <> 0 then
+     F:=F(n-1)*2;
+ end;
+ var i,n,c: integer;
+begin
+  for i:= 1 to 43 do
+   if F(i) mod 14 = 0 then
+    c:=c+1;
+  print(c);
+end.
