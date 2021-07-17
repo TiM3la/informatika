@@ -1,0 +1,18 @@
+Function F(n: integer): integer;
+ begin
+   if n = 1 then
+     F:=4
+   else if n mod 2 = 0 then
+     F:=F(n-1)+n
+   else if n mod 2 <> 0 then
+     F:=F(n-2)+ F(n-1)- n;
+ end;
+ var n,s: integer;
+begin
+  for n:= 1 to 30 do 
+   begin
+   if F(n) mod 7 = 0 then
+     s:=s+F(n)
+   end;
+  print(s);
+end.
