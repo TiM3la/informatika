@@ -1,0 +1,18 @@
+function F(n: integer): integer;                  
+ begin
+  if n = 1 then
+    F:=10
+  else if n mod 7 <> 0 then
+    F:= F(n-1)+11*n
+  else
+    F:=F(n-1);
+ end;
+ var n: integer;
+begin
+ for n:=1 to 100 do
+  if F(n)>=15000 then
+  begin
+    writeln(n,F(n)- F(n-1));
+    break;
+  end;
+end.
